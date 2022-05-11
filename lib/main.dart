@@ -1,3 +1,7 @@
+import 'package:basic_project_lab/bookOfStu.dart';
+import 'package:basic_project_lab/talkRoom.dart';
+import 'package:basic_project_lab/timeTable.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:basic_project_lab/mentoMatch.dart';
 
@@ -35,7 +39,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
 
   int _currentIndex = 0;
-  final List<Widget> _children = [const Mento(), const Home(), const Graph()];
+  final List<Widget> _children = [const Mento(), const bookOfStudent(), const timeTable(), const Graph(), const talkRoom()];
 
   void _onTap(int index) {
     setState(() {
@@ -52,19 +56,28 @@ class _MyHomePageState extends State<MyHomePage> {
           type: BottomNavigationBarType.fixed,
           onTap: _onTap,
           currentIndex: _currentIndex,
-          items: [
-            new BottomNavigationBarItem(
-              icon: const Icon(Icons.fiber_manual_record),
+          items: const [
+            BottomNavigationBarItem(
+              icon: Image(image: AssetImage('images/search.jpg'),),
               label: "멘토 신청",
+
             ),
-            new BottomNavigationBarItem(
-              icon: const Icon(Icons.home),
-              label: "메인",
+            BottomNavigationBarItem(
+              icon: Image(image: AssetImage('images/book.jpg'),),
+              label: "일지 작성",
             ),
-            new BottomNavigationBarItem(
-              icon: const Icon(Icons.graphic_eq),
+            BottomNavigationBarItem(
+              icon: Image(image: AssetImage('images/timeTable.jpg'),),
+              label: "멘토링 시간표",
+            ),
+            BottomNavigationBarItem(
+              icon: Image(image: AssetImage('images/graph.jpg'),),
               label: "성적 그래프",
-            )
+            ),
+            BottomNavigationBarItem(
+              icon: Image(image: AssetImage('images/talkRoom.jpg'),),
+              label: "채팅방",
+            ),
           ],
       ),
         floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
