@@ -53,6 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
         body: _children[_currentIndex],
         bottomNavigationBar: BottomNavigationBar (
+          backgroundColor: Colors.white,
           type: BottomNavigationBarType.fixed,
           onTap: _onTap,
           currentIndex: _currentIndex,
