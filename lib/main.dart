@@ -81,12 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ],
       ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
-        floatingActionButton: const FloatingActionButton(
-          child: Icon(Icons.call_outlined),
-          tooltip: "전화 연결",
-          onPressed: null,
-        ),
+
     );
 
   }
