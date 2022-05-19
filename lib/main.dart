@@ -23,14 +23,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-  final String title;
+  const MyHomePage({Key? key}) : super(key: key);
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -38,52 +37,59 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
-  int _currentIndex = 0;
-  final List<Widget> _children = [const Mento(), const bookOfStudent(), const timeTable(), const Graph(), const talkRoom()];
-
-  void _onTap(int index) {
-    setState(() {
-      _currentIndex = index;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-        body: _children[_currentIndex],
-        bottomNavigationBar: BottomNavigationBar (
-          backgroundColor: Colors.white,
-          type: BottomNavigationBarType.fixed,
-          onTap: _onTap,
-          currentIndex: _currentIndex,
-          items: const [
-            BottomNavigationBarItem(
-              icon: Image(image: AssetImage('images/search.jpg'),),
-              label: "멘토 신청",
-
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          const SizedBox(height: 200.0,),
+          Row(
+            children: const <Widget> [
+              SizedBox(width: 90.0,),
+              Text('환영합니다!', style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),)
+            ],
+          ),
+          const SizedBox(height: 20.0,),
+          Row(
+            children: const [
+              SizedBox(width: 150.0,),
+              Text('당신은..', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900),),
+            ],
+          ),
+          const SizedBox(height: 20.0,),
+          SizedBox (
+            width: 110.0,
+            child: OutlinedButton(
+              onPressed: () {  },
+              child: const Text('멘티', style: TextStyle(color: Colors.black),),
+              style: OutlinedButton.styleFrom(
+                backgroundColor: const Color(0xffF0F0F0),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+              ),
             ),
-            BottomNavigationBarItem(
-              icon: Image(image: AssetImage('images/book.jpg'),),
-              label: "일지 작성",
+          ),
+          const SizedBox(height: 10.0,),
+          SizedBox(
+            width: 110.0,
+            child: OutlinedButton(
+              onPressed: () {  },
+              child: const Text('멘토', style: TextStyle(color: Colors.black),),
+              style: OutlinedButton.styleFrom(
+                backgroundColor: const Color(0xffF0F0F0),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+              ),
             ),
-            BottomNavigationBarItem(
-              icon: Image(image: AssetImage('images/timeTable.jpg'),),
-              label: "멘토링 시간표",
-            ),
-            BottomNavigationBarItem(
-              icon: Image(image: AssetImage('images/graph.jpg'),),
-              label: "성적 그래프",
-            ),
-            BottomNavigationBarItem(
-              icon: Image(image: AssetImage('images/talkRoom.jpg'),),
-              label: "채팅방",
-            ),
-          ],
+          )
+        ],
       ),
-
     );
-
   }
 
 
