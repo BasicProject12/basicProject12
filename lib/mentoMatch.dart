@@ -115,6 +115,7 @@ class EduListConstructing extends StatelessWidget {
             barrierDismissible: false,
             builder: (BuildContext context) {
               return AlertDialog(
+
                 title: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
@@ -129,7 +130,7 @@ class EduListConstructing extends StatelessWidget {
                         Text("대표자: "+edus[index].represent, style: const TextStyle(fontSize: 15.0,)),
                         Text("연락처: "+edus[index].phoneNum, style: const TextStyle(fontSize: 15.0),),
                       ],
-                    )
+                    ),
                   ],
                 ),
                 content: SingleChildScrollView(
@@ -147,13 +148,33 @@ class EduListConstructing extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: <Widget> [
                           OutlinedButton(
+                            style: OutlinedButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                            ),
                             onPressed: () {Navigator.of(context).pop();},
                             child: const Text('가능한 시간대 확인', style: TextStyle(color: Color(0xff1C479B)),),
                           ),
                           const SizedBox(height: 10.0,),
                           OutlinedButton(
+                            style: OutlinedButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                            ),
                             onPressed: () {Navigator.of(context).pop();},
                             child: const Text("신청하기", style: TextStyle(color: Color(0xff1C479B)),),
+                          ),
+                          const SizedBox(height: 10.0,),
+                          OutlinedButton(
+                            style: OutlinedButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                            ),
+                            onPressed: () {Navigator.of(context).pop();},
+                            child: const Text("취소", style: TextStyle(color: Color(0xff1C479B)),),
                           )
                         ],
                       )
