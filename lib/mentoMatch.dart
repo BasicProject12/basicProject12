@@ -57,7 +57,7 @@ class _MentoState extends State<Mento> {
                 ],
               ),
             ),
-            Container(width: 1000, child: Divider(thickness: 1.0,),),
+            Container(width: 1000, child: const Divider(thickness: 1.0,),),
             const SizedBox(height: 15.0,),
             Expanded(
               child: EduListConstructing(),

@@ -1,12 +1,13 @@
 import 'package:basic_project_lab/bookOfStu.dart';
 import 'package:basic_project_lab/mentiAuth.dart';
+import 'package:basic_project_lab/mentoAuth.dart';
 import 'package:basic_project_lab/talkRoom.dart';
 import 'package:basic_project_lab/timeTable.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:basic_project_lab/mentoMatch.dart';
 
-import 'Home.dart';
+import 'Home_menti.dart';
 import 'graph.dart';
 
 void main() {
@@ -81,7 +82,10 @@ class _MyHomePageState extends State<MyHomePage> {
           SizedBox(
             width: 110.0,
             child: OutlinedButton(
-              onPressed: () {  },
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => mentoAuth()));
+              },
               child: const Text('멘토', style: TextStyle(color: Colors.black),),
               style: OutlinedButton.styleFrom(
                 backgroundColor: const Color(0xffF0F0F0),

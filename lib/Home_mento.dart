@@ -6,18 +6,19 @@ import 'package:flutter/material.dart';
 import 'bookOfStu.dart';
 import 'graph.dart';
 import 'mentoMatch.dart';
+import 'mentoMatch_mento.dart';
 
-class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+class Home_mento extends StatefulWidget {
+  const Home_mento({Key? key}) : super(key: key);
 
   @override
   _HomeState createState() => _HomeState();
 }
 
-class _HomeState extends State<Home> {
+class _HomeState extends State<Home_mento> {
   int _currentIndex = 0;
   final List<Widget> _children = [
-    const Mento(),
+    const MentoMatch_mento(),
     const bookOfStudent(),
     const timeTable(),
     const Graph(),

@@ -2,8 +2,8 @@ import 'package:basic_project_lab/Home_menti.dart';
 import 'package:basic_project_lab/Home_mento.dart';
 import 'package:flutter/material.dart';
 
-class mentiAuth extends StatelessWidget {
-  mentiAuth({Key? key}) : super(key: key);
+class mentoAuth extends StatelessWidget {
+  mentoAuth({Key? key}) : super(key: key);
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -11,6 +11,7 @@ class mentiAuth extends StatelessWidget {
   TextEditingController _email = TextEditingController();
   TextEditingController _pw = TextEditingController();
   TextEditingController _location = TextEditingController();
+  TextEditingController _organization = TextEditingController();
 
 
   @override
@@ -22,7 +23,7 @@ class mentiAuth extends StatelessWidget {
           Row(
             children: const <Widget> [
               SizedBox(width: 80.0,),
-              Text('멘티시군요!', style: TextStyle(fontSize: 33, fontWeight: FontWeight.bold),)
+              Text('멘토시군요!', style: TextStyle(fontSize: 33, fontWeight: FontWeight.bold),)
             ],
           ),
           const SizedBox(height: 10.0,),
@@ -46,7 +47,7 @@ class mentiAuth extends StatelessWidget {
                         return "이름을 입력해주세요";
                       }
                       return null;
-                      },
+                    },
                     decoration: const InputDecoration(
                       hintText: '이름을 입력해주세요.',
                       labelText: '이름',
@@ -62,7 +63,7 @@ class mentiAuth extends StatelessWidget {
                         return "이메일을 입력해주세요.";
                       }
                       return null;
-                      },
+                    },
                     decoration: const InputDecoration(
                       hintText: '이메일을 입력해주세요.',
                       labelText: '이메일',
@@ -77,7 +78,7 @@ class mentiAuth extends StatelessWidget {
                         return '비밀번호를 입력해주세요.';
                       }
                       return null;
-                      },
+                    },
                     decoration: const InputDecoration(
                       hintText: '비밀번호를 입력해주세요.',
                       labelText: '비밀번호',
@@ -93,27 +94,42 @@ class mentiAuth extends StatelessWidget {
                         return '교육 가능 지역을 입력해주세요.';
                       }
                       return null;
-                      },
+                    },
                     decoration: const InputDecoration(
                       hintText: '교육 가능 지역을 입력해주세요.',
                       labelText: '교육 가능 지역',
                       labelStyle: TextStyle(color: Colors.black),
                     ),
                   ),
+                  const SizedBox(height: 25.0,),
+                  TextFormField(
+                    controller: _organization,
+                    validator: (value) {
+                      if(value!.trim().isEmpty) {
+                        return '교육단체 이름을 입력해주세요.';
+                      }
+                      return null;
+                    },
+                    decoration: const InputDecoration(
+                      hintText: '교육단체 이름을 입력해주세요.',
+                      labelText: '교육단체 이름',
+                      labelStyle: TextStyle(color: Colors.black),
+                    ),
+                  ),
                   Container(
-                    margin: const EdgeInsets.only(top: 50.0),
-                    alignment: Alignment.centerRight,
-                    child: InkWell(
-                      onTap: () {
-                        if (_formKey.currentState!.validate()) {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => const Home_menti()),
-                          );
-                        }
-                      },
-                      child: Image.asset('images/next.jpg'),
-                    )
+                      margin: const EdgeInsets.only(top: 50.0),
+                      alignment: Alignment.centerRight,
+                      child: InkWell(
+                        onTap: () {
+                          if (_formKey.currentState!.validate()) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const Home_mento()),
+                            );
+                          }
+                        },
+                        child: Image.asset('images/next.jpg'),
+                      )
                   )
                 ],
               ),
