@@ -74,6 +74,7 @@ flutter:
     - images/litup.jpg
     - images/smile.jpg
     - images/picture.jpg
+    - images/next.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
