@@ -97,6 +97,7 @@ class EduTile extends StatelessWidget {
 
 class EduListConstructing extends StatelessWidget {
 
+
   final List<Edu> edus = <Edu>[Edu("희망교육봉사단체", "010-1234-5678", "이석훈", "대전광역시 중구 서문로 107번길", "초/중/고등학생 학습을 지도하고 지역사회 평생 교육을 활성화하기 위해 운영하는 교육봉사단체입니다."), Edu("루나코인봉사단체", "010-2345-3532", "권도형", "대전광역시 유성구 테헤란로 102-23", "코인철학을 가르치는 단체입니다."),
     Edu("권도형 죽이고싶다.", "010-2604-0404", "루나", "서울특별시 강남구 압구정동 2단지", "권도형 암살단입니다."), Edu("대전물려버렸으단체", "010-0000-0000", "몰라", "대전 유성구 월평동 12", "코인손절단입니다."),
     Edu("충남대 교육봉사 동아리", "042-122-5422", "김택근", "대전 유성구 궁동 충남대학교", "교육단체를 가장한 술판입니다."), Edu("권택근식 운영", "042-312-4242", "노택근", "대전 유성구 궁동 충남대학교", "권택근식 수업입니다."),
@@ -163,7 +164,15 @@ class EduListConstructing extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
                             ),
-                            onPressed: () {Navigator.of(context).pop();},
+                            onPressed: () {
+                              showDialog(
+                                  context: context,
+                                  barrierDismissible: false,
+                                  builder: (BuildContext context) {
+                                      return const SubjectDialog();
+                                  },
+                              );
+                            },
                             child: const Text("신청하기", style: TextStyle(color: Color(0xff1C479B)),),
                           ),
                           const SizedBox(height: 10.0,),
@@ -190,6 +199,133 @@ class EduListConstructing extends StatelessWidget {
       separatorBuilder: (context, index) {
         return const Divider();
       },
+    );
+  }
+}
+
+class SubjectDialog extends StatefulWidget {
+  const SubjectDialog({Key? key}) : super(key: key);
+
+  @override
+  _SubjectDialogState createState() => _SubjectDialogState();
+}
+
+class _SubjectDialogState extends State<SubjectDialog> {
+  bool _isKorean = false;
+  bool _isMath = false;
+  bool _isEnglish = false;
+  bool _isSocial = false;
+  bool _isScience = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      title: const Text('과목을 선택해주세요.'),
+      insetPadding: const EdgeInsets.symmetric(vertical: 280),
+      content: Column(
+        children: [
+          const SizedBox(height: 20.0,),
+          Row(
+            children: [
+              Column(
+                children: [
+                  const Text('국어'),
+                  Checkbox(
+                    value: _isKorean,
+                    onChanged: (bool? value) {
+                      setState(() {
+                        _isKorean = value!;
+                      });
+                    },
+                  ),
+                ],
+              ),
+              const SizedBox(width: 20.0,),
+              Column(
+                children: [
+                  const Text('수학'),
+                  Checkbox(
+                    value: _isMath,
+                    onChanged: (bool? value) {
+                      setState(() {
+                        _isMath = value!;
+                      });
+                    },
+                  ),
+                ],
+              ),
+              const SizedBox(width: 20.0,),
+              Column(
+                children: [
+                  const Text('영어'),
+                  Checkbox(
+                    value: _isEnglish,
+                    onChanged: (bool? value) {
+                      setState(() {
+                        _isEnglish = value!;
+                      });
+                    },
+                  ),
+                ],
+              ),
+              const SizedBox(width: 20.0,),
+              Column(
+                children: [
+                  const Text('사회'),
+                  Checkbox(
+                    value: _isSocial,
+                    onChanged: (bool? value) {
+                      setState(() {
+                        _isSocial = value!;
+                      });
+                    },
+                  ),
+                ],
+              ),
+              const SizedBox(width: 20.0,),
+              Column(
+                children: [
+                  const Text('과학'),
+                  Checkbox(
+                    value: _isScience,
+                    onChanged: (bool? value) {
+                      setState(() {
+                        _isScience = value!;
+                      });
+                    },
+                  ),
+                ],
+              ),
+            ],
+          ),
+      const SizedBox(height: 40.0,),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget> [
+          OutlinedButton(
+            style: OutlinedButton.styleFrom(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+            ),
+            onPressed: () {},
+            child: const Text('신청', style: TextStyle(color: Color(0xff1C479B)),),
+          ),
+          OutlinedButton(
+            style: OutlinedButton.styleFrom(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+            ),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            child: const Text("취소", style: TextStyle(color: Color(0xff1C479B)),),
+          ),
+        ],
+      ),
+        ],
+      )
     );
   }
 }
