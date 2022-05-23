@@ -16,15 +16,6 @@ class _MentoState extends State<MentoMatch_mento> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-          appBar: AppBar(backgroundColor: Colors.white, leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            color: Colors.white,
-            icon: Image.asset('images/back.jpg'),
-          ),
-            elevation: 0.0,
-          ),
           body: Column(
             children: <Widget>[
               const SizedBox(height: 15.0),
