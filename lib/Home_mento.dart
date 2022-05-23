@@ -35,6 +35,15 @@ class _HomeState extends State<Home_mento> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
+      appBar: AppBar(backgroundColor: Colors.white, leading: IconButton(
+        onPressed: () {
+          Navigator.pop(context);
+        },
+        color: Colors.white,
+        icon: Image.asset('images/back.jpg'),
+      ),
+        elevation: 0.0,
+      ),
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.white,
