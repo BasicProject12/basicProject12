@@ -6,12 +6,13 @@ import 'package:basic_project_lab/timeTable.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:basic_project_lab/mentoMatch.dart';
+import 'package:intl/date_symbol_data_local.dart';
 
 import 'Home_menti.dart';
 import 'graph.dart';
 
 void main() {
-  runApp(const MyApp());
+  initializeDateFormatting().then((_) => runApp(const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
