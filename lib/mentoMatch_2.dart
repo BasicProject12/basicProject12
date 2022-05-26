@@ -80,6 +80,8 @@ class _mento_2State extends State<mento_2> {
                   ),
                   const SizedBox(height: 8.0,),
                   Container(
+                    // GestureDetector 같은거로 클릭하면 시간 설정할 수 있는 화면 뜨게끔 만들어주세요.
+
                     width: 40.0,
                     height: 40.0,
                     decoration: BoxDecoration(
@@ -114,6 +116,7 @@ class _mento_2State extends State<mento_2> {
                   ),
                   const SizedBox(height: 8.0,),
                   Container(
+                    // GestureDetector 같은거로 클릭하면 시간 설정할 수 있는 화면 뜨게끔 만들어주세요.
                     width: 40.0,
                     height: 40.0,
                     decoration: BoxDecoration(
@@ -148,6 +151,7 @@ class _mento_2State extends State<mento_2> {
                   ),
                   const SizedBox(height: 8.0,),
                   Container(
+                    // GestureDetector 같은거로 클릭하면 시간 설정할 수 있는 화면 뜨게끔 만들어주세요.
                     width: 40.0,
                     height: 40.0,
                     decoration: BoxDecoration(
@@ -182,6 +186,7 @@ class _mento_2State extends State<mento_2> {
                   ),
                   const SizedBox(height: 8.0,),
                   Container(
+                    // GestureDetector 같은거로 클릭하면 시간 설정할 수 있는 화면 뜨게끔 만들어주세요.
                     width: 40.0,
                     height: 40.0,
                     decoration: BoxDecoration(
@@ -216,6 +221,7 @@ class _mento_2State extends State<mento_2> {
                   ),
                   const SizedBox(height: 8.0,),
                   Container(
+                    // GestureDetector 같은거로 클릭하면 시간 설정할 수 있는 화면 뜨게끔 만들어주세요.
                     width: 40.0,
                     height: 40.0,
                     decoration: BoxDecoration(
@@ -255,6 +261,7 @@ class _mento_2State extends State<mento_2> {
                   ),
                   const SizedBox(height: 8.0,),
                   Container(
+                    // GestureDetector 같은거로 클릭하면 시간 설정할 수 있는 화면 뜨게끔 만들어주세요.
                     width: 40.0,
                     height: 40.0,
                     decoration: BoxDecoration(
@@ -289,6 +296,7 @@ class _mento_2State extends State<mento_2> {
                   ),
                   const SizedBox(height: 8.0,),
                   Container(
+                    // GestureDetector 같은거로 클릭하면 시간 설정할 수 있는 화면 뜨게끔 만들어주세요.
                     width: 40.0,
                     height: 40.0,
                     decoration: BoxDecoration(
