@@ -9,6 +9,8 @@ class bookOfStudent extends StatefulWidget {
 }
 
 class _bookOfStudentState extends State<bookOfStudent> {
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,6 +40,25 @@ class _bookOfStudentState extends State<bookOfStudent> {
               formatButtonVisible: false,
               titleCentered: true,
             ),
+
+
+            calendarStyle: CalendarStyle(
+              isTodayHighlighted: true,
+              selectedDecoration: BoxDecoration(
+                color: const Color(0xff1C479B),
+                shape: BoxShape.rectangle,
+                borderRadius: BorderRadius.circular(5.0),
+              ),
+              defaultDecoration: BoxDecoration(
+                shape: BoxShape.rectangle,
+                borderRadius: BorderRadius.circular(5.0),
+              ),
+              weekendDecoration: BoxDecoration(
+                shape: BoxShape.rectangle,
+                borderRadius: BorderRadius.circular(5.0),
+              ),
+            ),
+
             calendarBuilders: CalendarBuilders(dowBuilder: (context, day) {
               switch(day.weekday) {
                 case 1:

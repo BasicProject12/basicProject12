@@ -68,9 +68,9 @@ class _MyHomePageState extends State<MyHomePage> {
             child: OutlinedButton(
               onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => mentiAuth()));
+                    MaterialPageRoute(builder: (context) => const Home_menti()));
               },
-              child: const Text('멘티', style: TextStyle(color: Colors.black),),
+              child: Image.asset('images/stude.png'),
               style: OutlinedButton.styleFrom(
                 backgroundColor: const Color(0xffF0F0F0),
                 shape: RoundedRectangleBorder(
@@ -87,7 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => mentoAuth()));
               },
-              child: const Text('멘토', style: TextStyle(color: Colors.black),),
+              child: Image.asset('images/teach.png'),
               style: OutlinedButton.styleFrom(
                 backgroundColor: const Color(0xffF0F0F0),
                 shape: RoundedRectangleBorder(
